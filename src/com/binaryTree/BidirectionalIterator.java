@@ -1,4 +1,4 @@
-package com.src.binaryTree;
+package com.binaryTree;
 
 /**
  * This interface may be implemented by many collections

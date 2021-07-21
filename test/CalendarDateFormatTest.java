@@ -1,6 +1,4 @@
-package com.test;
-
-import com.src.CalendarDateFormatter;
+import com.CalendarDateFormatter;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.text.ParseException;

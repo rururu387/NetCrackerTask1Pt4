@@ -1,5 +1,4 @@
-package com.src;
-
+package com;
 
 import org.w3c.dom.Text;
 

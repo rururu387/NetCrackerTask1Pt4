@@ -1,4 +1,4 @@
-package com.src.binaryTree;
+package com.binaryTree;
 
 public class BTreeNode<T>
 {

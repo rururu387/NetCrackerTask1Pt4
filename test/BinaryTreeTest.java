@@ -1,6 +1,4 @@
-package com.test;
-
-import com.src.binaryTree.*;
+import com.binaryTree.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -19,18 +17,18 @@ public class BinaryTreeTest
      */
     public BinaryTreeTest()
     {
-        BTreeNode<Integer> root = new BTreeNode<Integer>(6);
-        BTreeNode<Integer> node1 = new BTreeNode<Integer>(1);
-        BTreeNode<Integer> node2 = new BTreeNode<Integer>(2);
-        BTreeNode<Integer> node3 = new BTreeNode<Integer>(3);
-        BTreeNode<Integer> node4 = new BTreeNode<Integer>(4);
-        BTreeNode<Integer> node5 = new BTreeNode<Integer>(5);
-        BTreeNode<Integer> node6 = new BTreeNode<Integer>(6);
-        BTreeNode<Integer> node7 = new BTreeNode<Integer>(7);
-        BTreeNode<Integer> node8 = new BTreeNode<Integer>(8);
-        BTreeNode<Integer> node9 = new BTreeNode<Integer>(9);
-        BTreeNode<Integer> node10 = new BTreeNode<Integer>(10);
-        BTreeNode<Integer> node11 = new BTreeNode<Integer>(11);
+        BTreeNode<Integer> root = new BTreeNode<>(6);
+        BTreeNode<Integer> node1 = new BTreeNode<>(1);
+        BTreeNode<Integer> node2 = new BTreeNode<>(2);
+        BTreeNode<Integer> node3 = new BTreeNode<>(3);
+        BTreeNode<Integer> node4 = new BTreeNode<>(4);
+        BTreeNode<Integer> node5 = new BTreeNode<>(5);
+        BTreeNode<Integer> node6 = new BTreeNode<>(6);
+        BTreeNode<Integer> node7 = new BTreeNode<>(7);
+        BTreeNode<Integer> node8 = new BTreeNode<>(8);
+        BTreeNode<Integer> node9 = new BTreeNode<>(9);
+        BTreeNode<Integer> node10 = new BTreeNode<>(10);
+        BTreeNode<Integer> node11 = new BTreeNode<>(11);
         root.setLeftChild(node3);
         node3.setLeftChild(node2);
         node2.setLeftChild(node1);

@@ -1,6 +1,4 @@
-package com.test;
-
-import com.src.TextAnalysis;
+import com.TextAnalysis;
 import org.junit.Test;
 import org.w3c.dom.Text;
 

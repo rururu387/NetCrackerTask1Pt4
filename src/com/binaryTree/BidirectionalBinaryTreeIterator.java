@@ -1,4 +1,4 @@
-package com.src.binaryTree;
+package com.binaryTree;
 
 abstract class BidirectionalBinaryTreeIterator<T> implements BidirectionalIterator<BTreeNode<T>>
 {

@@ -1,4 +1,4 @@
-package com.src.binaryTree;
+package com.binaryTree;
 
 import com.sun.source.tree.BinaryTree;
 import com.sun.source.tree.ExpressionTree;

@@ -1,4 +1,4 @@
-package com.src.binaryTree;
+package com.binaryTree;
 
 import java.util.NoSuchElementException;
 
