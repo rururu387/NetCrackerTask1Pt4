@@ -24,8 +24,11 @@ public class Main
     {
         //Subtask 3. Usage of functions example.
         //Example text placed here. No newlines added since content is not important.
-        String text1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-        String text2 = "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
+        String text1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut" +
+                " labore et dolore magna aliqua.";
+        String text2 = "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea" +
+                " commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore " +
+                "eu fugiat nulla pariatur.";
         Set<Character> intersectionSet = TextAnalysis.stringsLettersIntersection(text1, text2, new TextAnalysis.CounterAlphabetOrderComparator());
         System.out.println("Letters that appear in both strings. Placed in alphabet order. Uppercase first:");
         printLetterSet(intersectionSet);

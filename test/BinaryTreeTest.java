@@ -164,4 +164,10 @@ public class BinaryTreeTest
         List<Integer> expected = List.of(1, 2, 3, 4, 5, 4, 5, 6, 7, 8, 7, 6, 5);
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void countTreeLength()
+    {
+        assertEquals(4, tree.getHeight());
+    }
 }

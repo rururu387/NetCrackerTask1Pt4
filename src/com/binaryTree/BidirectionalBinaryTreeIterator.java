@@ -1,5 +1,7 @@
 package com.binaryTree;
 
+import java.util.NoSuchElementException;
+
 abstract class BidirectionalBinaryTreeIterator<T> implements BidirectionalIterator<BTreeNode<T>>
 {
     protected SimpleBinaryTree<T> tree;
@@ -97,5 +99,57 @@ abstract class BidirectionalBinaryTreeIterator<T> implements BidirectionalIterat
     public void setToFront()
     {
         currentNode = front;
+    }
+
+    //Decompose repeated code
+    protected boolean nextForBoundaryValues()
+    {
+        if (currentNode == beginNode)
+        {
+            currentNode = front;
+            return true;
+        }
+
+        if (currentNode == back)
+        {
+            currentNode = endNode;
+            return true;
+        }
+
+        if (currentNode == endNode)
+        {
+
+            //Last node was already achieved.
+            //Trying to call next() after the termination node will result in raised exception
+            throw new NoSuchElementException("Tried to call next() having termination node as current");
+        }
+        return false;
+    }
+
+    protected boolean prevForBoundaryValues()
+    {
+        if (currentNode == beginNode)
+        {
+
+            //Trying to get previous of the root node will result in raised exception
+            throw new NoSuchElementException("Tried to call prev() of a root node");
+        }
+
+        if (currentNode == front)
+        {
+            currentNode = beginNode;
+            return true;
+        }
+
+        if (currentNode == endNode)
+        {
+
+            //If user wants to get prev() of termination node
+            //Return value becomes the last node of a reverse traversal (always root)
+            currentNode = tree.getRoot();
+            return true;
+        }
+
+        return false;
     }
 }

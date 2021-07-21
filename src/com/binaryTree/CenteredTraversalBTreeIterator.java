@@ -12,8 +12,6 @@ public class CenteredTraversalBTreeIterator<T> extends BidirectionalBinaryTreeIt
 
     LastNode lastNode;
 
-    //boolean isLastOperationNext = true;
-
     public CenteredTraversalBTreeIterator(SimpleBinaryTree<T> tree)
     {
         super(tree);
@@ -85,9 +83,12 @@ public class CenteredTraversalBTreeIterator<T> extends BidirectionalBinaryTreeIt
     @Override
     public void next()
     {
-        //isLastOperationNext = true;
+        if (nextForBoundaryValues())
+        {
+            return;
+        }
 
-        if (currentNode == beginNode)
+        /*if (currentNode == beginNode)
         {
             currentNode = front;
             lastNode = LastNode.Parent;
@@ -106,7 +107,7 @@ public class CenteredTraversalBTreeIterator<T> extends BidirectionalBinaryTreeIt
         {
             currentNode = endNode;
             return;
-        }
+        }*/
 
         switch (lastNode)
         {
@@ -151,32 +152,10 @@ public class CenteredTraversalBTreeIterator<T> extends BidirectionalBinaryTreeIt
     @Override
     public void prev()
     {
-        if (currentNode == beginNode)
+        if (prevForBoundaryValues())
         {
-
-            //Trying to get previous of the root node will result in raised exception
-            throw new NoSuchElementException("Tried to call prev() of a root node");
-        }
-
-        if (currentNode == front)
-        {
-
-            currentNode = beginNode;
-            lastNode = LastNode.Parent;
             return;
         }
-
-        if (currentNode == endNode)
-        {
-
-            //If user wants to get prev() of termination node
-            //Return value becomes the last node of a reverse bypass (always root)
-            currentNode = back;
-            lastNode = LastNode.Parent;
-            return;
-        }
-
-        //isLastOperationNext = false;
 
         switch (lastNode)
         {

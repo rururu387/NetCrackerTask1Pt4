@@ -68,10 +68,5 @@ public class TextAnalysisTest
         Set<Character> intersectionSetReordered = new TreeSet<>(new TextAnalysis.CounterAlphabetOrderComparator());
         intersectionSetReordered.addAll(intersectionSet);
         Iterator<?> iterator = intersectionSetReordered.iterator();
-        while (iterator.hasNext())
-        {
-            System.out.print(iterator.next() + " ");
-        }
-        System.out.println();
     }
 }

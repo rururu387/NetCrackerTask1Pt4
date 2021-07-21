@@ -24,18 +24,9 @@ public class ReverseTraversalBTreeIterator<T> extends BidirectionalBinaryTreeIte
     @Override
     public void next()
     {
-        if (currentNode == beginNode)
+        if (nextForBoundaryValues())
         {
-            currentNode = front;
             return;
-        }
-
-        if (currentNode == endNode)
-        {
-
-            //Last node was already achieved.
-            //Trying to call next() after the termination node will result in raised exception
-            throw new NoSuchElementException("Tried to call next() having termination node as current");
         }
 
         if (currentNode == tree.getRoot())
@@ -61,25 +52,8 @@ public class ReverseTraversalBTreeIterator<T> extends BidirectionalBinaryTreeIte
     @Override
     public void prev()
     {
-        if (currentNode == beginNode)
+        if (prevForBoundaryValues())
         {
-
-            //Trying to get previous of the root node will result in raised exception
-            throw new NoSuchElementException("Tried to call prev() of a root node");
-        }
-
-        if (currentNode == front)
-        {
-            currentNode = beginNode;
-            return;
-        }
-
-        if (currentNode == endNode)
-        {
-
-            //If user wants to get prev() of termination node
-            //Return value becomes the last node of a reverse traversal (always root)
-            currentNode = tree.getRoot();
             return;
         }
 

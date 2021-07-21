@@ -24,7 +24,11 @@ public class ForwardTraversalBTreeIterator<T> extends BidirectionalBinaryTreeIte
     @Override
     public void next()
     {
-        if (currentNode == beginNode)
+        if (nextForBoundaryValues())
+        {
+            return;
+        }
+        /*if (currentNode == beginNode)
         {
             currentNode = front;
             return;
@@ -36,7 +40,7 @@ public class ForwardTraversalBTreeIterator<T> extends BidirectionalBinaryTreeIte
             //Last node was already achieved.
             //Trying to call next() after the termination node will result in raised exception
             throw new NoSuchElementException("Tried to call next() having termination node as current");
-        }
+        }*/
 
         if (currentNode.hasLeftChild())
         {
@@ -73,25 +77,8 @@ public class ForwardTraversalBTreeIterator<T> extends BidirectionalBinaryTreeIte
     @Override
     public void prev()
     {
-        if (currentNode == beginNode)
+        if (prevForBoundaryValues())
         {
-
-            //Trying to get previous of the beginNode will result in raised exception
-            throw new NoSuchElementException("Tried to call prev() of a root node");
-        }
-
-        if (currentNode == tree.getRoot())
-        {
-            currentNode = beginNode;
-            return;
-        }
-
-        if (currentNode == endNode)
-        {
-
-            //If user wants to get prev() of termination node
-            //Return value becomes the last node (leaf) of a forward traversal
-            currentNode = BTreeNode.getRightestLeaf(tree.getRoot());
             return;
         }
 
